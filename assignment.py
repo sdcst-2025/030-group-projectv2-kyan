@@ -34,7 +34,7 @@ def square(l):
     return answer
 
 def squaresolve():
-    l = float(input("Enter your squares side length:"))
+    l = float(input("Enter your squares side length: "))
     print(square(l))
 
 def rectangle(l, w):
@@ -51,7 +51,7 @@ def cm_m(x):
     return answer
 
 def cm_m_solve():
-    x = float(input("Input your number of cm to convert to metres:"))
+    x = float(input("Input your number of cm to convert to metres: "))
     print(cm_m(x))
 
 def m_km(x):
@@ -59,7 +59,7 @@ def m_km(x):
     return answer
 
 def m_km_solve():
-    x = float(input("Enter the amount of metres to convert to km"))
+    x = float(input("Enter the amount of metres to convert to km: "))
     print(m_km(x))
 
 def km_miles(x):
@@ -67,26 +67,45 @@ def km_miles(x):
     return answer
 
 def km_miles_solve():
-    x = float(input("Enter the amount of km to convert to miles"))
+    x = float(input("Enter the amount of km to convert to miles: "))
     print(km_miles(x))
 
 def cube(l):
     answer = l**3
     return answer
 
+def cube_solve():
+    l = float(input("Enter the side length of your cube: "))
+    print(cube(l))
+
 def cylinder(r, h):
     pi = 3.141592653
     answer = pi * (r**2) * h
     return answer
+
+def cylinder_solve(r,h):
+    r = float(input("Enter the radius of your cylinder: "))
+    h = float(input("Enter the height of your cylinder: "))
+    print(cylinder(r,h))
 
 def sphere(r):
     pi = 3.141592653
     answer = (4/3)*pi*(r**3)
     return answer
 
+def sphere_solve(r):
+    r = float(input("Enter the radius of your sphere: "))
+    print(sphere(r))
+
 def pyramid(l,w,h):
     answer = (l*w*h)/3
     return answer
+
+def pyramid_solve():
+    l = float(input("Enter the length of your pyramid: "))
+    w = float(input("Enter the width of your pyramid: "))
+    h = float(input("Enter the height of your pyramid: "))
+    print(pyramid(l,w,h))
 
 def instructions():
     # Will display instructions
@@ -104,7 +123,7 @@ def main():
     You will need to include a while loop to keep repeating the commands until
     the user chooses to exit
     """
-    
+    cont = True
     print(title())
     while cont == True:
         # keep giving options to choose menu options until they choose to exit
@@ -125,7 +144,77 @@ def main():
             else:
                 cont = False
         
-        elif choice == 
+        elif choice == "S":
+            squaresolve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "R":
+            rectanglesolve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "CM":
+            cm_m_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "M":
+            m_km_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "KM":
+            km_miles_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "CU":
+            cube_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "CY":
+            cylinder_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "SP":
+            sphere_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+
+        elif choice == "P":
+            pyramid_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
 
 if __name__ == "__main__":
     main()
