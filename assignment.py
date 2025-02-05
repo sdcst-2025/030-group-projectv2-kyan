@@ -9,7 +9,7 @@ def title():
     # Author: Copper
     # Modified:
     # title
-    return "Welcome to calculator 9000! This calculator can calculate area of certain shapes, convert measurements, and find the volume of certain 3D shapes"
+    return "\033[0;32m\033[1m\033[4mWelcome to calculator 9000! This calculator can calculate area of certain shapes, convert measurements, and find the volume of certain 3D shapes\033[0m"
 
 def circle(r):
     pi = 3.141592653
@@ -18,7 +18,10 @@ def circle(r):
 
 def circlesolve():
     r = float(input("Enter the radius of your circle: "))
-    print(circle(r))
+    if r > 0:
+        print(circle(r))
+    else:
+        print("Invalid Input")
 
 def triangle(b, h):
     answer = (1/2) * b * h
@@ -27,7 +30,10 @@ def triangle(b, h):
 def trianglesolve():
     b = float(input("Enter the base length of your triangle: "))
     h = float(input("Enter the height length of your triangle: "))
-    print(triangle(b,h))
+    if b > 0 and h > 0:
+        print(triangle(b,h))
+    else:
+        print("Invalid Input")
 
 def square(l):
     answer =  l**2
@@ -35,7 +41,10 @@ def square(l):
 
 def squaresolve():
     l = float(input("Enter your squares side length: "))
-    print(square(l))
+    if l > 0:
+        print(square(l))
+    else:
+        print("Invalid Input")
 
 def rectangle(l, w):
     answer = l * w
@@ -44,7 +53,10 @@ def rectangle(l, w):
 def rectanglesolve():
     l = float(input("Enter your rectangles length: "))
     w = float(input("Enter your rectangles width: "))
-    print(rectangle(l,w))
+    if l > 0 and w > 0:
+        print(rectangle(l,w))
+    else:
+        print("Invalid Input")
 
 def cm_m(x):
     answer = x/100
@@ -52,7 +64,10 @@ def cm_m(x):
 
 def cm_m_solve():
     x = float(input("Input your number of cm to convert to metres: "))
-    print(cm_m(x))
+    if x > 0:
+        print(cm_m(x))
+    else:
+        print("Invalid Input")
 
 def m_km(x):
     answer = x/1000
@@ -60,7 +75,10 @@ def m_km(x):
 
 def m_km_solve():
     x = float(input("Enter the amount of metres to convert to km: "))
-    print(m_km(x))
+    if x > 0:
+        print(m_km(x))
+    else:
+        print("Invalid Input")
 
 def km_miles(x):
     answer = x/1.609
@@ -68,7 +86,10 @@ def km_miles(x):
 
 def km_miles_solve():
     x = float(input("Enter the amount of km to convert to miles: "))
-    print(km_miles(x))
+    if x > 0:
+        print(km_miles(x))
+    else:
+        print("Invalid Input")
 
 def cube(l):
     answer = l**3
@@ -76,7 +97,10 @@ def cube(l):
 
 def cube_solve():
     l = float(input("Enter the side length of your cube: "))
-    print(cube(l))
+    if l > 0:
+        print(cube(l))
+    else:
+        print("Invalid Input")
 
 def cylinder(r, h):
     pi = 3.141592653
@@ -86,16 +110,22 @@ def cylinder(r, h):
 def cylinder_solve(r,h):
     r = float(input("Enter the radius of your cylinder: "))
     h = float(input("Enter the height of your cylinder: "))
-    print(cylinder(r,h))
+    if r > 0 and h > 0:
+        print(cylinder(r,h))
+    else:
+        print("Invalid Input")
 
 def sphere(r):
     pi = 3.141592653
     answer = (4/3)*pi*(r**3)
     return answer
 
-def sphere_solve(r):
+def sphere_solve():
     r = float(input("Enter the radius of your sphere: "))
-    print(sphere(r))
+    if r > 0:
+        print(sphere(r))
+    else:
+        print("Invalid Input")
 
 def pyramid(l,w,h):
     answer = (l*w*h)/3
@@ -105,7 +135,10 @@ def pyramid_solve():
     l = float(input("Enter the length of your pyramid: "))
     w = float(input("Enter the width of your pyramid: "))
     h = float(input("Enter the height of your pyramid: "))
-    print(pyramid(l,w,h))
+    if l > 0 and w > 0 and h > 0:
+        print(pyramid(l,w,h))
+    else:
+        print("Invalid Input")
 
 def instructions():
     # Will display instructions
@@ -113,8 +146,41 @@ def instructions():
     # output parameters: None
     # Author:
     # Modified:
-    return "To begin, enter what you want to calculate, you can enter C for area of circle, T for area of triangle, S for area of square, R for area of rectangle, CM for converting cm to metres, M for converting metres to km, KM for converting km to miles, CU for volume of a cube, CY for volume of a cylinder, SP for volume of a sphere, and P for volume of a pyramid"
 
+    ques = [
+        ['\033[1;33mC','\033[1;33mArea of Circle'],
+        ['\033[0;32mT','\033[0;32mArea of Triangle'],
+        ['\033[0;34mS','\033[0;34mArea of Square'],
+        ['\033[0;35mR','\033[0;35mArea of Rectangle'],
+        ['\033[0;36mCM','\033[0;36mConvert CM to M'],
+        ['\033[1;31mM','\033[1;31mConvert M to KM'],
+        ['\033[1;32mKM','\033[1;32mConvert KM to MI'],
+        ['\033[1;34mCU','\033[1;34mVolume of Cube'],
+        ['\033[1;35mCY','\033[1;35mVolume of Cylinder'],
+        ['\033[1;36mSP','\033[1;36mVolume of Sphere'],
+        ['\033[0;33mP','\033[0;33mVolume of Pyramid'],
+
+    ]
+
+    for i in ques:
+        print(f"{i[0]:<10}- {i[1]:<12}")
+
+    return "\033[0;31m\033[1mTo begin, enter what you want to calculate\033[0m"
+
+
+"""
+    \0331;33mC, for area of circle\0330m
+    \033[0;32mT for area of triangle\033[0m 
+    \033[0;34mS for area of square\033[0m 
+    \033[0;35mR for area of rectangle\033[0m 
+    \033[0;36mCM for converting cm to metres\033[0m 
+    \033[1;31mM for converting metres to km\033[0m 
+    \033[1;32mKM for converting km to miles\033[0m 
+    \033[1;34mCU for volume of a cube\033[0m 
+    \033[1;35mCY for volume of a cylinder\033[0m 
+    \033[1;36mSP for volume of a sphere\033[0m 
+    \033[0;33mand P for volume of a pyramid\033[0m
+"""
 
 
 def main():
@@ -125,6 +191,7 @@ def main():
     """
     cont = True
     print(title())
+    print(instructions())
     while cont == True:
         # keep giving options to choose menu options until they choose to exit
         choice = (input("Enter what you want to calculate: "))
@@ -210,6 +277,13 @@ def main():
 
         elif choice == "P":
             pyramid_solve()
+            ask = input("Would you like to calculate something else? (Type Y or N): ")
+            if ask == "Y":
+                cont = True
+            else:
+                cont = False
+        else:
+            print("Invalid Input")
             ask = input("Would you like to calculate something else? (Type Y or N): ")
             if ask == "Y":
                 cont = True

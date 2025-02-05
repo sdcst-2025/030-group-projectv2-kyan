@@ -1,0 +1,1 @@
+print("\033[0;31mred text\033[0m and \033[1;34mblue\033[0m text")
