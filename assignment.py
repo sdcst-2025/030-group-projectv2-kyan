@@ -81,7 +81,7 @@ def m_km_solve():
         print("Invalid Input")
 
 def km_miles(x):
-    answer = x/1.609
+    answer = x*0.621371
     return answer
 
 def km_miles_solve():
@@ -107,7 +107,7 @@ def cylinder(r, h):
     answer = pi * (r**2) * h
     return answer
 
-def cylinder_solve(r,h):
+def cylinder_solve():
     r = float(input("Enter the radius of your cylinder: "))
     h = float(input("Enter the height of your cylinder: "))
     if r > 0 and h > 0:
@@ -166,22 +166,6 @@ def instructions():
         print(f"{i[0]:<10}- {i[1]:<12}")
 
     return "\033[0;31m\033[1mTo begin, enter what you want to calculate\033[0m"
-
-
-"""
-    \0331;33mC, for area of circle\0330m
-    \033[0;32mT for area of triangle\033[0m 
-    \033[0;34mS for area of square\033[0m 
-    \033[0;35mR for area of rectangle\033[0m 
-    \033[0;36mCM for converting cm to metres\033[0m 
-    \033[1;31mM for converting metres to km\033[0m 
-    \033[1;32mKM for converting km to miles\033[0m 
-    \033[1;34mCU for volume of a cube\033[0m 
-    \033[1;35mCY for volume of a cylinder\033[0m 
-    \033[1;36mSP for volume of a sphere\033[0m 
-    \033[0;33mand P for volume of a pyramid\033[0m
-"""
-
 
 def main():
     """
@@ -289,6 +273,9 @@ def main():
                 cont = True
             else:
                 cont = False
+
+    if cont == False:
+        print("Thanks for using Calculator 9000!")
 
 if __name__ == "__main__":
     main()
